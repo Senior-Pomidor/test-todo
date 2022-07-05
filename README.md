@@ -1,8 +1,6 @@
 # test-todo
 https://senior-pomidor.github.io/test-todo/
 
-При обновлении вылетает 404. Нужно удалять из урла "/todo"
-
 ## Project setup
 ```
 yarn install
