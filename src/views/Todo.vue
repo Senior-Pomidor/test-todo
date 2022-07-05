@@ -32,6 +32,8 @@
 
     .copyright {
       margin-top: 30px;
+      color: #414B62;
+      font-weight: 500;
     }
 
     @media screen and (max-width: 510px) {

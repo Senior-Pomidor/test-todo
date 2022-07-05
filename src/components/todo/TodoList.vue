@@ -4,8 +4,10 @@
       <h2 class="todo-list__title">
         Todo list
       </h2>
-      <button class="todo-list__button button button--accent">Add</button>
+      <button class="button button--accent">Add</button>
     </div>
+    <label for="#123"></label>
+
       <ul class="todo-list__list">
         <Todo v-for="todo in todos" :key="todo.id" :todo="todo" class="todo-list__item"/>
       </ul>
@@ -30,7 +32,7 @@
       fetch('https://jsonplaceholder.typicode.com/todos')
         .then((response) => response.json())
         .then((data) => {
-          // console.log(data)
+          console.log(data)
           this.todos = data
         })
         .catch((error) => console.log('ERROR: ' + error));
@@ -55,7 +57,35 @@
     border-radius: 20px 0px 40px;
     padding: $list-padding;
     box-sizing: border-box;
-    overflow: hidden;
+    // overflow: hidden;
+
+    &::before,
+    &::after {
+      position: absolute;
+      left: 0;
+      display: block;
+      border-radius: 20px;
+      transform-origin: 100% 0;
+      content: "";
+    }
+
+    &::before {
+      top: -35px;
+      width: 93%;
+      height: 70px;
+      background: linear-gradient(180deg, #31394D 0%, #091739 100%);
+      transform: rotate(-2.32deg);
+      z-index: -1;
+    }
+
+    &::after {
+      top: -60px;
+      width: 80%;
+      height: 85px;
+      background: linear-gradient(180deg, #4F5565 0%, #000000 53.65%);
+      transform: rotate(-4.48deg);
+      z-index: -2;
+    }
 
     &__header {
       display: flex;
@@ -71,14 +101,11 @@
       margin: 0;
     }
 
-    &__button {
-
-    }
-
     &__list {
       max-height: 380px;
       list-style: none;
       padding-left: 0;
+      margin: 0;
       overflow-y: auto;
     }
 
