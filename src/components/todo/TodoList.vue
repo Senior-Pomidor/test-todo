@@ -41,11 +41,17 @@
 </script>
 
 <style lang="scss">
+  @import '@/styles/vars/colors.scss'; 
   $bg-color: #252E42;
   $text-color: #fff;
-  $list-padding: 30px;
 
   .todo-list {
+    --list-padding: 30px;
+    $scrollbar-bg: transparent;
+    $scrollbar-thumb-bg: $color-orange;
+    $scrollbar-width: 4px;
+    $scrollbar-border-radius: 10px;
+
     position: relative;
     width: 100%;
     max-width: 420px;
@@ -55,7 +61,7 @@
     color: $text-color;
     background-color: $bg-color;
     border-radius: 20px 0px 40px;
-    padding: $list-padding;
+    padding: var(--list-padding);
     box-sizing: border-box;
     // overflow: hidden;
 
@@ -70,7 +76,7 @@
     }
 
     &::before {
-      top: -35px;
+      top: -25px;
       width: 93%;
       height: 70px;
       background: linear-gradient(180deg, #31394D 0%, #091739 100%);
@@ -79,7 +85,7 @@
     }
 
     &::after {
-      top: -60px;
+      top: -40px;
       width: 80%;
       height: 85px;
       background: linear-gradient(180deg, #4F5565 0%, #000000 53.65%);
@@ -102,21 +108,41 @@
     }
 
     &__list {
-      max-height: 380px;
+      width: calc(100% + 15px);
+      padding-right: 15px;
+
+      max-height: 425px;
       list-style: none;
       padding-left: 0;
       margin: 0;
+      box-sizing: border-box;
       overflow-y: auto;
+
+      scrollbar-width: $scrollbar-width;
+      scrollbar-color: $scrollbar-thumb-bg $scrollbar-bg;
+
+      &::-webkit-scrollbar {
+        position: absolute;
+        width: $scrollbar-width;
+      }
+
+      &::-webkit-scrollbar-track {
+        background-color: $scrollbar-bg;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: $scrollbar-thumb-bg;
+        border-radius: 10px;
+      }
     }
 
     &__overlay {
       position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 100%;
-      height: 75px;
+      left: var(--list-padding);
+      bottom: 5px;
+      width: calc(100% - var(--list-padding) * 2);
+      height: 70px;
       box-sizing: border-box;
-      padding: 0 $list-padding;
       background: linear-gradient(180deg, rgba(37, 46, 66, 0) 0%, #252E42 67.19%);
     }
   }

@@ -25,6 +25,17 @@
 </script>
 
 <style lang="scss">
+  @import '@/styles/vars/colors.scss';
+
+  // $color-checked: $color-light-grey;
+  $todo-info-color--checked: $color-light-grey;
+  $todo-desc-color: $color-light-grey;
+  $todo-text-color--hover: $color-orange;
+  $checkbox-bg-color: $color-light-grey;
+  $checkbox-bg-color--checked: $color-orange;
+  $checkbox-color--checked: $color-white;
+  $checkbox-bg-color--hover: $color-orange-opacity;
+
   .todo {
     display: flex;
     flex-direction: row;
@@ -45,6 +56,7 @@
       min-width: 20px;
       height: 20px;
       margin-right: 15px;
+      content: "";
 
       &::before {
         position: absolute;
@@ -55,8 +67,7 @@
         align-items: center;
         width: 100%;
         height: 100%;
-        background-color: #4F5565;
-        color: #fff;
+        background-color: $checkbox-bg-color;
         border-radius: 6px;
         visibility: visible; 
         content: "";
@@ -64,12 +75,12 @@
 
       &:checked {
         &::before {
-          background-color: #FF8469;
+          background-color: $checkbox-bg-color--checked;
           content: url('../../assets/images/icons/icon-checked.svg');
         }
 
         + .todo__info {
-          color: #4F5565;
+          color: $todo-info-color--checked;
 
           .todo__text {
             color: inherit;
@@ -97,7 +108,7 @@
       margin-top: 3px;
       font-size: .75rem;
       font-weight: 400;
-      color: #4F5565;
+      color: $todo-desc-color;
       white-space: nowrap;
 
       &::before {
@@ -116,17 +127,17 @@
     &:hover {
       .todo__checkbox:not(:checked) {
         &::before {
-          background-color: #FF846933;
+          background-color: $checkbox-bg-color--hover;
         }
 
         + .todo__info {
-          color:  #FF8469;
+          color:  $todo-text-color--hover;
         }
       }
 
       .todo__checkbox:checked {
         + .todo__info {
-          color: #fff;
+          color: $checkbox-color--checked;
 
           .todo__text {
             color: inherit;

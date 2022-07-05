@@ -15,14 +15,6 @@
     background-color: #161C2E;
     width: 100vw;
     height: 100vh;
-
-  }
-  #app {
-    * {
-    font-family: Montserrat, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    }
   }
 
   #nav {

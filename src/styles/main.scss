@@ -1,21 +1,43 @@
+$body-color: $color-grey;
+
+body {
+	color: $body-color;
+
+	* {
+    font-family: Montserrat, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    }
+}
+
 .button {
+	$btn-color: $body-color;
+	$btn-color--accent: $color-white;
+	$btn-color--accent-bg: $color-orange;
+	$btn-color--accent-hover: $color-dark-orange;
+
 	padding: 5px 10px;
 	border: none;
 	border-radius: 7px;
-	-webkit-border-radius: 7px;
-	-moz-border-radius: 7px;
-	-ms-border-radius: 7px;
-	-o-border-radius: 7px;
 	font-size: 14px;
 	text-transform: uppercase;
 	cursor: pointer;
 
 	&--accent {
-		background-color: $color-accent;
-		color: #fff;
+		background-color: $btn-color--accent-bg;
+		color: $btn-color--accent;
+
+		&:hover {
+			background-color: $btn-color--accent-hover;
+		}
 	}
 }
 
 input {
 	margin: 0;
+}
+
+input[type="checkbox"] {
+	// Hack for Firefox
+  -moz-appearance: initial;
 }

@@ -32,7 +32,6 @@
 
     .copyright {
       margin-top: 30px;
-      color: #414B62;
       font-weight: 500;
     }
 
