@@ -1,0 +1,17 @@
+.button {
+	padding: 5px 10px;
+	border: none;
+	border-radius: 7px;
+	-webkit-border-radius: 7px;
+	-moz-border-radius: 7px;
+	-ms-border-radius: 7px;
+	-o-border-radius: 7px;
+	font-size: 14px;
+	text-transform: uppercase;
+	cursor: pointer;
+
+	&--accent {
+		background-color: $color-accent;
+		color: #fff;
+	}
+}

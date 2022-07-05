@@ -4,7 +4,7 @@
       <h2 class="todo-list__title">
         Todo list
       </h2>
-      <button class="todo-list__button">Add</button>
+      <button class="todo-list__button button button--accent">Add</button>
     </div>
       <ul class="todo-list__list">
         <Todo v-for="todo in todos" :key="todo.id" :todo="todo" class="todo-list__item"/>
@@ -38,11 +38,11 @@
   }
 </script>
 
-<style scoped lang="scss">
-  @import '@/styles/imports.scss';
+<style lang="scss">
   $bg-color: #252E42;
   $text-color: #fff;
   $list-padding: 30px;
+
   .todo-list {
     position: relative;
     width: 100%;
@@ -57,9 +57,22 @@
     box-sizing: border-box;
     overflow: hidden;
 
-    h2 {
+    &__header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    &__title {
       font-weight: 700;
+      font-size: 1.75rem;
       line-height: 1.2;
+      margin: 0;
+    }
+
+    &__button {
+
     }
 
     &__list {
