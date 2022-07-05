@@ -9,24 +9,32 @@
 
 <style lang="scss">
   // @import '@/styles/imports.scss';
+  @keyframes bg-animation {
+    0% {
+      background-position: 0 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0 50%;
+    }
+  }
+
   body {
     margin: 0;
     padding: 0;
-    background-color: #161C2E;
     width: 100vw;
     height: 100vh;
-  }
+    background: #161C2E;
+    background:  linear-gradient(90deg, rgba(22,28,46,1) 2%,
+                                        rgba(36,47,80,1) 36%,
+                                        rgba(36,47,80,1) 67%,
+                                        rgba(22,28,46,1) 100%);
+    background-size: 150%;
+    background-position: 0 0;
 
-  #nav {
-    padding: 30px;
-
-    a {
-      font-weight: bold;
-      color: #2c3e50;
-
-      &.router-link-exact-active {
-        color: #42b983;
-      }
-    }
+    animation: bg-animation ease-out infinite;
+    animation-duration: 6s;
   }
 </style>
