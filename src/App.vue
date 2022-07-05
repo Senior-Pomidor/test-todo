@@ -27,14 +27,11 @@
     width: 100vw;
     height: 100vh;
     background: #161C2E;
-    background:  linear-gradient(90deg, rgba(22,28,46,1) 2%,
-                                        rgba(36,47,80,1) 36%,
-                                        rgba(36,47,80,1) 67%,
-                                        rgba(22,28,46,1) 100%);
-    background-size: 150%;
-    background-position: 0 0;
+    background:  radial-gradient(50% 50% at 50% 50%, #252E42 0%, #161C2E 100%);
+    background-size: 200%;
+    // background-position: 0 0;
 
-    animation: bg-animation ease-out infinite;
+    animation: bg-animation ease infinite;
     animation-duration: 6s;
   }
 </style>
