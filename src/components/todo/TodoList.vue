@@ -7,13 +7,7 @@
       <button class="todo-list__button">Add</button>
     </div>
       <ul class="todo-list__list">
-        <li v-for="task in tasks" :key="task.id" class="todo-list__item todo">
-          <input type="checkbox" class="todo__checkbox" :id="`todo-item-${task.id}`">
-          <label class="todo__label" :for="`todo-item-${task.id}`">
-            <span class="todo__text">{{ task.title }}</span>
-            <span class="todo__desc">Lorem ipsum dolor sit amet.</span>
-          </label>
-        </li>
+        <Todo v-for="todo in todos" :key="todo.id" :todo="todo" class="todo-list__item"/>
       </ul>
 
       <div class="todo-list__overlay"></div>
@@ -21,19 +15,23 @@
 </template>
 
 <script>
+  import Todo from './Todo.vue'
   export default {
     name: 'TodoList',
+    components: {
+      Todo
+    },
 
     data: () => ({
-      tasks: []
+      todos: []
     }),
 
     mounted() {
       fetch('https://jsonplaceholder.typicode.com/todos')
         .then((response) => response.json())
         .then((data) => {
-          console.log(data)
-          this.tasks = data
+          // console.log(data)
+          this.todos = data
         })
         .catch((error) => console.log('ERROR: ' + error));
     },
@@ -75,22 +73,11 @@
       position: absolute;
       left: 0;
       bottom: 0;
+      width: 100%;
       height: 75px;
-      margin: 0 $list-padding;
+      box-sizing: border-box;
+      padding: 0 $list-padding;
       background: linear-gradient(180deg, rgba(37, 46, 66, 0) 0%, #252E42 67.19%);
-    }
-  }
-
-  .todo {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    text-align: left;
-
-    &__label {
-      display: flex;
-      flex-direction: column;
     }
   }
 </style>

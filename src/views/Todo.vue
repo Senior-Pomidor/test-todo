@@ -24,5 +24,20 @@
     flex-direction: column;
     align-items: center;
     padding: 0 15px;
+
+    &__list {
+      margin-top: 162px;
+      box-shadow: 0px 14px 34px rgba(0, 0, 0, 0.25);;
+    }
+
+    .copyright {
+      margin-top: 30px;
+    }
+
+    @media screen and (max-width: 510px) {
+      &__list {
+        margin-top: 100px;
+      }
+    }
   }
 </style>
