@@ -8,7 +8,6 @@
 </template>
 
 <style lang="scss">
-  // @import '@/styles/imports.scss';
   @keyframes bg-animation {
     0% {
       background-position: 0 50%;

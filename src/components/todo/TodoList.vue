@@ -41,7 +41,6 @@
 </script>
 
 <style lang="scss">
-  @import '@/styles/vars/colors.scss'; 
   $bg-color: #252E42;
   $text-color: #fff;
 
@@ -144,6 +143,7 @@
       height: 70px;
       box-sizing: border-box;
       background: linear-gradient(180deg, rgba(37, 46, 66, 0) 0%, #252E42 67.19%);
+      pointer-events: none;
     }
   }
 </style>

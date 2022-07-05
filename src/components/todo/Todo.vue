@@ -25,9 +25,6 @@
 </script>
 
 <style lang="scss">
-  @import '@/styles/vars/colors.scss';
-
-  // $color-checked: $color-light-grey;
   $todo-info-color--checked: $color-light-grey;
   $todo-desc-color: $color-light-grey;
   $todo-text-color--hover: $color-orange;
