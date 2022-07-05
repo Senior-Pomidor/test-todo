@@ -4,12 +4,14 @@ import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 
 const routes = [
+  // {
+  //   path: '/',
+  //   redirect: 'todo'
+  // },
+  // на gh-pages вылетает 404 при обновлении страницы с урлом !== "/"
   {
+    // path: '/todo',
     path: '/',
-    redirect: 'todo'
-  },
-  {
-    path: '/todo',
     name: 'Todo',
     component: () => import('../views/Todo.vue')
   }
