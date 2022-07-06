@@ -6,11 +6,12 @@
       </h2>
       <button class="button button--accent">Add</button>
     </div>
-    <label for="#123"></label>
-
+    <div class="todo-list__scrollbox">
       <ul class="todo-list__list">
         <Todo v-for="todo in todos" :key="todo.id" :todo="todo" class="todo-list__item"/>
       </ul>
+    </div>
+
 
       <div class="todo-list__overlay"></div>
   </div>
@@ -52,6 +53,8 @@
     $scrollbar-border-radius: 10px;
 
     position: relative;
+    display: flex;
+    flex-direction: column;
     width: 100%;
     max-width: 420px;
     height: 540px;
@@ -106,20 +109,15 @@
       margin: 0;
     }
 
-    &__list {
-      width: calc(100% + 15px);
-      padding-right: 15px;
-
-      max-height: 425px;
-      list-style: none;
-      padding-left: 0;
-      margin: 0;
-      box-sizing: border-box;
+    &__scrollbox {
+      flex-grow: 1;
       overflow-y: auto;
+      width: 100%;
+      padding-right: 15px;
 
       scrollbar-width: $scrollbar-width;
       scrollbar-color: $scrollbar-thumb-bg $scrollbar-bg;
-
+      
       &::-webkit-scrollbar {
         position: absolute;
         width: $scrollbar-width;
@@ -133,6 +131,13 @@
         background-color: $scrollbar-thumb-bg;
         border-radius: 10px;
       }
+    }
+
+    &__list {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+      box-sizing: border-box;
     }
 
     &__overlay {
