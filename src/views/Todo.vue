@@ -35,7 +35,7 @@
       font-weight: 500;
     }
 
-    @media screen and (max-width: 510px) {
+    @media screen and (max-width: $breakpoint-xs) {
       &__list {
         margin-top: 100px;
       }

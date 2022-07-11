@@ -150,5 +150,14 @@
       background: linear-gradient(180deg, rgba(37, 46, 66, 0) 0%, #252E42 67.19%);
       pointer-events: none;
     }
+
+    @media screen and (max-width: $breakpoint-xs) {
+      &::before {
+        width: 83%;
+      }
+      &::after {
+        width: 73%;
+      }
+    }
   }
 </style>
