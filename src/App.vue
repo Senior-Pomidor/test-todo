@@ -8,6 +8,8 @@
 </template>
 
 <style lang="scss">
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
+
   @keyframes bg-animation {
     0% {
       background-position: 0 50%;
