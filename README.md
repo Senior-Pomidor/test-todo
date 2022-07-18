@@ -1,4 +1,6 @@
 # test-todo
+Верстка todo списка на Vue    
+
 https://senior-pomidor.github.io/test-todo/
 
 ## Project setup
